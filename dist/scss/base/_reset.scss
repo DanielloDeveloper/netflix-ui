@@ -79,21 +79,21 @@ body{
 //stile scrollbar and selection
 ::selection {
     color: black;
-    background: rgb(252, 215, 215);
+    background: $third;
  }
  ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
  }
  ::-webkit-scrollbar-thumb {
-    background: $second;
+    background: rgb(17, 17, 17);
     border-radius: 10px;
  }
  ::-webkit-scrollbar-thumb:hover {
-    background: $second;
+    background: rgb(17, 17, 17);
  }
  ::-webkit-scrollbar-track {
-    background: $first;
+    background: rgb(17, 17, 17);
     border-radius: 8px;
     
  }
