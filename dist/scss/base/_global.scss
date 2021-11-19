@@ -1,0 +1,94 @@
+/* ============================================================================
+** Global Classes
+==============================================================================*/
+
+// Class media (img,video ..)
+  .img{
+    width: 100%;
+    max-width: 35vh;
+    height: auto;
+    padding: .78rem;
+    &-rad{
+      width: 100%;
+      max-width: 35vh;
+      height: auto;
+      padding: .78rem;
+      border-radius: 1.2rem;
+    }
+    &-border{
+      width: 100%;
+      max-width: 35vh;
+      height: auto;
+      border:7px solid black;
+      border-radius: 1.2rem;
+      margin: .78rem;
+      padding: 0;
+    }
+  }
+
+//Class Flex
+.flex{
+  @include flex(nowrap,row,column);
+  &-col{
+  @include flex(nowrap,column,row);
+  }
+  &-center-row{
+  @include flex(nowrap,row,column){
+    align-items: center;
+    justify-content: center;
+  }
+  }
+  &-centerCol{
+    @include flex(nowrap,column,column){
+      align-items: center;
+      justify-content: center;
+    }
+    }
+  &-nav{
+    @include flex(nowrap,row,row){
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+  }
+  &-center{
+    @include flex(nowrap,row,row){
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+//class relative,absolute,none and block
+.relative{position: relative;}
+.absolute{position: absolute;}
+.none{display: none;}
+.no-scroll{overflow: hidden;}
+.scroll-x{
+  overflow-x: scroll;
+  overflow-y:hidden;
+  white-space: nowrap;
+}
+
+
+  //style logo and before element
+    .logo{
+      font-size: 1.5rem;
+      max-width: 100px;
+      position: relative;
+      top: 3vh;
+      color: $third;
+      font-weight: 800;
+      padding: $p;
+      margin: $m 0;
+      &::before{
+          content: "";
+          position: absolute;
+          bottom: .6rem;
+          right: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $second;
+      }
+  }

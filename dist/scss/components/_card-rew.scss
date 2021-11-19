@@ -1,0 +1,56 @@
+.card-rew{
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: .7rem;
+    border-radius: 11px;
+    background: $add;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 50px;
+    cursor: pointer;
+    &-top{
+        flex: .8;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid $first;
+        position: relative;
+        img{
+            width: 100%;
+            padding: 0;
+            border-radius: 11px;
+        }
+        &::before{
+            content: "";
+            width: 80%;
+            height: 2px;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            background: $second;
+            z-index: 2;
+            cursor: pointer;
+        }
+        &::after{
+            content: "133 minuti";
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            background: rgba(185, 21, 21, 0.274);
+            z-index: 2;
+            cursor: pointer;
+            padding: .6rem;
+            border-radius: 11px;
+            font-size: 10px;
+        }
+}
+    h1{
+        padding: .4rem;
+    }
+    p{
+        padding: 0;
+        padding-left: .8rem;
+        color: $first;
+    }
+}

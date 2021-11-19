@@ -1,0 +1,190 @@
+.left{
+    width: 260px;
+    height: 100%;
+    overflow: auto;
+    border-right: .5px solid $first;
+    color: $first;
+    display: flex;
+    flex-direction: column;
+    transition: .4s ease-in;
+
+    //style close button
+    #close{
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        font-size: 25px;
+        color: $third;
+        padding: $p;
+        display: none;
+        cursor: pointer;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: $second;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1,
+        }
+    }
+    
+    //style menu list
+    .list{
+        flex: .6;
+        color: $first;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: relative;
+        top: 5vh;
+        font-size: .9rem; 
+        &-div{
+            padding: $p;
+            h3{font-size: .7rem; padding-bottom: 0.2rem;}
+            //style div icon + text
+            div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: start;
+                cursor: pointer;
+                padding: .2rem;
+                margin: .1rem 0;
+                position: relative;
+                padding-left: 35px;
+                transition: .3s ease-in all;
+                //before element icon
+                i{
+                    position: relative;
+                    z-index: 2;
+                    padding: .5rem;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: $second;
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        opacity: 0;
+                    }
+                }
+                //before element div
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 3px;
+                    height: 80%;
+                    background: $second;
+                    top: 10%;
+                    opacity: 0;
+                }
+
+                //hover compare before element
+                &:hover,&:hover::before,&:hover i::before{
+                    opacity: 1;
+                    color: $third;
+                }
+            }
+        }
+    }
+
+    //style card 
+    .card-mention{
+        flex: .4;
+        @include center;
+        &-div{
+            width: 90%;
+            padding: 20px 0 40px 0;
+            background: rgb(0, 0, 0);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            img{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: -60px;
+                cursor: pointer;
+            }
+            .info{
+                margin-top: 30px;
+                h1{
+                    font-size: 1.1rem;
+                    padding: 0;
+                    text-align: center;
+                    color: $third;
+                }
+                p{
+                    font-size: 0.7rem;
+                    color: $first;
+                    padding: 0;
+                    text-align: center;
+                }
+                .btn{
+                    padding: .7rem;
+                    background: $first;
+                    border-radius: 13px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 1rem;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    color: $third;
+                    transition: .3s cubic-bezier(0.47, 0, 0.745, 0.715);
+                    width: 80%;
+                    margin: $m auto;
+                    text-align: center;
+                    &:hover{
+                        background: $second;
+                        box-shadow: 2px 3px 33px -3px $second;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive(laptop){.card-mention{display: none;}}
+}
+
+    // =========================================================================
+    // Responsive design of left bar
+    // ==========================================================================
+ 
+    @include responsive(tablet){
+        .left{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: $black;
+            overflow: hidden !important;
+            border-right: none;
+            .list{
+                padding-left: 20px;
+            }
+            //style logo and list
+            .logo{ top: 1vh; /*fix top position*/}
+            .list{top: 2vh; /*fix top position*/}
+        }
+    }
+
+    @include responsive(phone){
+        .left{
+            left: -100%;
+            #close{display: block;}
+        }
+        .left.active{
+            left: 0;
+        }
+    }

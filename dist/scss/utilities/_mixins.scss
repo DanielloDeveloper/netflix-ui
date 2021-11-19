@@ -1,0 +1,94 @@
+// =========================================================================
+// Mixins relative Font size and font family
+// ==========================================================================
+
+@mixin title($color) {
+    color: $color;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: .6rem;
+    margin: 10px;
+    @content;
+}
+
+@mixin subTitle($color) {
+   color: $color;
+   font-size: 1.2rem;
+   font-weight: bold;
+   padding: .6rem;
+   margin: 10px;
+   @content;
+}
+
+@mixin textSmall($color) {
+   color: $color;
+   font-size: 0.9rem;
+   font-weight: 500;
+   padding: 10px;
+   text-decoration: none;
+   list-style: none;
+   @content;
+}
+
+@mixin icon($color) {
+   color: $color;
+   font-size: 1.5rem;
+   padding: .2rem;
+}
+
+// =========================================================================
+// Mixins relative Flex display
+// ==========================================================================
+
+@mixin flex($wrap,$direction,$direction-responsive){
+   display: flex;
+   flex-flow: $direction $wrap;
+   gap: 10px;
+   @content;
+   @include responsive(phone){
+      flex-flow:$direction-responsive $wrap;
+      @content;
+   }
+   @content;
+}
+@mixin center{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+// ============================================================================
+// Breakpoints Mixins
+// ============================================================================
+@mixin responsive($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+	  @media (max-width: map-get($breakpoints, $breakpoint)) {
+		@content;
+	  }
+	}
+}
+
+// ============================================================================
+// Mixins color,bordee,background
+// ============================================================================
+@mixin details($color,$border,$bg){
+   color: $color;
+   border: $border;
+   background: $bg;
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   user-select: none;
+   @content;
+}
+
+// ============================================================================
+// absolute position
+// ============================================================================
+@mixin absolute($top,$bottom,$right,$left) {
+   position: absolute;
+   top: $top;
+   bottom: $bottom;
+   right: $right;
+   left: $left;
+}

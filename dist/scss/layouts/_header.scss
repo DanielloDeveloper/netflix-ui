@@ -1,0 +1,30 @@
+.header-mob{
+    width: 100%;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.288);
+    height: 7vh;
+    position: fixed;
+    user-select: none;
+    cursor: pointer;
+    display: none;
+    .logo{top: 0; /*fixed position logo*/}
+    i{
+        position: relative;
+        right: 20px;
+        z-index: 2;
+        padding: $p;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: $second;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1,
+        }
+    }
+    
+    @include responsive(phone){display: flex;}
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix ui</title>
+    <link rel="stylesheet" href="/dist/scss/main.min.css">
+</head>
+<body>
+    <div class="left">
+        <span class="logo">Netflix</span>
+        <i class="material-icons-outlined" id="close">close</i>
+        <!--List element-->
+        <div class="list">
+            <div class="list-div">
+                <h3>Menu</h3>
+                <div>
+                        <i class="material-icons-outlined">apps</i>
+                        <p>Navigazione</p>
+                </div>
+                <div>
+                    <i class="material-icons-outlined"> favorite_border</i>
+                    <p>Preferiti</p>
+                </div>
+                <div>
+                    <i class="material-icons-outlined">event_note</i>
+                    <p>Nuove uscite</p>
+                </div>
+            </div>
+            <div class="list-div">
+                <h3>Social</h3>
+                <div>
+                    <i class="material-icons-outlined">person</i>
+                    <p>Amici</p>
+                </div>
+                <div>
+                    <i class="material-icons-outlined">groups</i>
+                    <p>Gruppi</p>
+                </div>
+            </div>
+            <div class="list-div">
+                <h3>Generali</h3>
+                <div>
+                    <i class="material-icons-outlined">settings</i>
+                    <p>Impostazioni</p>
+                </div>
+                <div>
+                    <i class="material-icons-outlined">logout</i>
+                    <p>Esci</p>
+                </div>
+            </div>
+        </div>
+        <!--Pubblicità element-->
+        <div class="card-mention">
+            <div class="card-mention-div">
+                <img src="/media/panel.svg" alt="">
+                <div class="info">
+                    <h1>Una sfida emozionante</h1>
+                    <p> 20k di persone partecipano</p>
+                    <div class="btn">Partecipa anche tu!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <header class="header-mob flex-nav">
+            <span class="logo">Netflix</span>
+            <i class="material-icons-outlined" id="open">menu</i>
+        </header>
+    </main>
+    <div class="right">
+        <h3>I tuoi amici online!!</h3>
+        <div>
+            <i class="material-icons-outlined relative">add</i>
+            <div class="users">
+                <div>
+                    <img src="/media/user1.jpg" alt="">
+                    <img src="/media/user2.jpg" alt="">
+                    <img src="/media/user3.jpg" alt="">
+                </div>
+                <div>
+                    <img src="/media/user4.jpg" alt="">
+                    <img src="/media/user5.jpg" alt="">
+                    <img src="/media/user6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/main.js"></script>
+</html>

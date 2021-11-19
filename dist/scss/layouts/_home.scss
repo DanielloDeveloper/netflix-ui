@@ -1,0 +1,12 @@
+main{
+    width: 90%;
+    height: 100%;
+    z-index: inherit;
+    
+    // =========================================================================
+    // Responsive design of homepage
+    // ==========================================================================
+    @include responsive(phone){
+        width: 100% !important;
+    }
+}

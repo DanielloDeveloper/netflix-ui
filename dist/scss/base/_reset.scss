@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+//reset input
+input,
+label,
+select,
+button,
+textarea
+{
+	border: 1px solid black;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1.2;
+    font-size: calc(0.5rem + 1.1vmin);
+    padding: 8px;
+    margin: 10px 0;
+    &:focus{
+        outline: none;
+    }
+}
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week]
+{
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+}
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"]
+{
+	overflow:visible;
+	width:auto;
+}
+
+// Start style element {Font-size}
+h1{
+    @include title(inherit);
+ }
+ h2{
+    @include subTitle(inherit);
+ }
+ p,span,li,a,label{
+     @include textSmall(inherit);
+ }
+ 
+ i {
+     @include icon(inherit);
+ }
+
+//style body
+body{
+    background: rgb(17, 17, 17);
+    height: 100vh;
+    color: $third;
+    font-family: $font;
+    display: flex;
+    overflow: hidden;
+}
+
+//stile scrollbar and selection
+::selection {
+    color: black;
+    background: rgb(252, 215, 215);
+ }
+ ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+ }
+ ::-webkit-scrollbar-thumb {
+    background: $second;
+    border-radius: 10px;
+ }
+ ::-webkit-scrollbar-thumb:hover {
+    background: $second;
+ }
+ ::-webkit-scrollbar-track {
+    background: $first;
+    border-radius: 8px;
+    
+ }
+ 
