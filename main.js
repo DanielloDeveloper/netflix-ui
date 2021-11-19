@@ -1,11 +1,13 @@
 //main js site
-const body = document.body;
+let body = document.body;
+      main = document.querySelector('main');
 
 const menu=(()=>{
     let open = document.querySelector('#open'),
         closes = document.querySelectorAll('#close'),
         right = document.querySelector('.right'),
-        left = document.querySelector('.left');
+        left = document.querySelector('.left'),
+        header = document.querySelector('.header-mob');
 
     open.onclick=()=>{
         right.classList.add('active');
@@ -17,7 +19,6 @@ const menu=(()=>{
             left.classList.remove('active');
         }
     });
-   
 })();
 
 let swiper = new Swiper(".series", {

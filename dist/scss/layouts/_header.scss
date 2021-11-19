@@ -2,12 +2,14 @@
 .header-mob{
     width: 100%;
     padding: 0 10px;
-    background: rgba(0, 0, 0, 0.288);
+    background: rgb(0, 0, 0);
     height: 7vh;
     position: fixed;
     user-select: none;
     cursor: pointer;
     display: none;
+    transition: .4s cubic-bezier(0.215, 0.610, 0.355, 1) all;
+    z-index: 1;
     .logo{top: 0; /*fixed position logo*/}
     i{
         position: relative;
