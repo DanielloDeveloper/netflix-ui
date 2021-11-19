@@ -25,11 +25,15 @@ let swiper = new Swiper(".series", {
     },
     breakpoints: {
     // when window width is >= 640px
-    640: {
+    768: {
       slidesPerView: 2,
       spaceBetween: 20
     },
-    976:{
+    1100 :{
+        slidesPerView: 3,
+        spaceBetween: 20
+    },
+    1400:{
         slidesPerView: 4,
         spaceBetween: -20
     }
