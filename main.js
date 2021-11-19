@@ -16,3 +16,22 @@ const menu=(()=>{
         left.classList.remove('active');
     }
 })();
+
+let swiper = new Swiper(".series", {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: "#next",
+      prevEl: "#back",
+    },
+    breakpoints: {
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    976:{
+        slidesPerView: 4,
+        spaceBetween: -20
+    }
+  }
+  });

@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 280px;
     height: auto;
-    margin: .7rem;
+    margin: .7rem auto;
     border-radius: 11px;
     background: $add;
     display: flex;
@@ -10,6 +10,7 @@
     position: relative;
     padding-bottom: 50px;
     cursor: pointer;
+    transition: .4s ease-out all;
     &-top{
         flex: .8;
         display: flex;
@@ -31,9 +32,10 @@
             background: $second;
             z-index: 2;
             cursor: pointer;
+            transition: .4s ease-out all;
         }
         &::after{
-            content: "133 minuti";
+            content: "120 minuti";
             position: absolute;
             top: 5px;
             left: 20px;
@@ -43,14 +45,25 @@
             padding: .6rem;
             border-radius: 11px;
             font-size: 10px;
+            transition: .4s ease-out all;
         }
 }
     h1{
         padding: .4rem;
+        transition: .4s ease-out all;
     }
     p{
         padding: 0;
         padding-left: .8rem;
         color: $first;
+        transition: .4s ease-out all;
     }
+    &:hover{
+        transform: scale(1.1);
+    }
+    &:hover &-top::before, &:hover &-top::after{
+        background: black;
+    }
+    &:hover h1{color: $second;}
+    &:hover p{color: $third;}
 }
