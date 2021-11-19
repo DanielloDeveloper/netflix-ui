@@ -106,7 +106,7 @@
         }
     }
 
-    @include responsive(phone){
+    @include responsive(laptop){
         @include center; //set center element
         .input-div{
             flex: 1;

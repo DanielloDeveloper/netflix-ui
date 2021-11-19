@@ -9,6 +9,7 @@
     background-size: cover;
     background-position: center;
     padding: 2rem;
+    position: relative;
 
     //left part 
     &-left{
@@ -20,7 +21,6 @@
         .top{
             display: flex;
             justify-content: end;
-
             //style badge
             span{
                 background: rgba(0, 0, 0, 0.425);
@@ -107,7 +107,23 @@
        //right part 
        &-right{
         flex: 1;
-        border: 2px solid blue;
+        padding: $p;
+        perspective: 1200;
+        position: absolute;
+        bottom: 3rem;
+        right: 1rem;
+        img{
+            width: 130px;
+            height: 80px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img.active{
+            width: 150px;
+            height: 90px;
+            transform: translateY(1rem);
+            box-shadow: 2px 3px 33px -3px $third;
+        }
     }
 
 
@@ -119,6 +135,10 @@
   .bottom{
       h1{font-size: 2rem;}
   }
+}
+@include responsive(laptop){
+    //style right section
+    &-right{display: none;}
 }
 @include responsive(tablet){
     //style left section
@@ -137,10 +157,7 @@
     }
     .bottom{padding: 2rem;}
 
-    //style right section
-    &-right{display: none;}
 }
-
 @include responsive(phone){
     padding: 0;
     width: 80%;
