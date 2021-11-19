@@ -2,106 +2,152 @@
  .card-total{
     width: 90%;
     margin: 2.5vh auto;
-    border-radius: 20px;
+    border-radius: 11px;
     background: url(/media/bg-home.jpg) rgba(0, 0, 0, 0.507);
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
-    padding: 3.4rem;
+    padding: 2rem;
 
-    //section top card
-    .top{
-        padding: 5vh 7vh;
+    //left part 
+    &-left{
+        flex: 1;
         display: flex;
-        align-items: center;
-        font-size: 0.8rem;
-        .badge{
-            font-size: 1rem;
-            background: rgba(0, 0, 0, 0.534);
-            text-align: center;
-            border-radius: 30px;
-            padding: .4rem .6rem;
+        flex-direction: column;
+
+        //style top section
+        .top{
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 .7rem;
-        }
-        .users{
-            margin: 0 .7rem;
-            img{
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
+            justify-content: end;
+
+            //style badge
+            span{
+                background: rgba(0, 0, 0, 0.425);
+                height: 2rem;
+                width: 80px;
+                font-size: 0.9rem;
+                border-radius: 13px;
+                font-weight: 500;
+                margin: $m;
+                margin-right: 2rem;
+                @include center
+            }
+
+            // style users (friends)
+            .friends{
+                @include center;
+                img{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    &:nth-child(1){
+                        transform: translateX(10px);
+                    }
+                    &:nth-child(2){
+                        z-index: 10;
+                    }
+                    &:nth-child(3){
+                        transform: translateX(-10px);
+                    }
+                }
+                p{
+                    font-size: 0.7rem;
+                    margin: 0;
+                    padding: 0;
+                    font-weight: 600;
+                }
             }
         }
-       
-    }
 
-    //section bottom card
-    .bottom{
-        justify-content: space-between;
-        padding: 1rem;
-        //left section
-        .left{
+        //style bottom section
+        .bottom{
+            padding: 3rem;
+            //style text
             h1{
-                font-size: 2.3rem; 
+                font-size: 2.4rem;
                 padding: 0;
-                margin-bottom: 0;
+                margin: 0;
             }
             p{
+                font-size: 0.8rem;
+                padding: .1rem 0;
+                margin: 0;
                 color: $first;
-                padding-top: .2rem;
-                font-size:0.7rem;
+                font-weight: 800;
             }
-            div{
+            //style button
+            .bottoni{
                 display: flex;
-                align-items: center;
-                justify-content: center;
                 .btn{
                     background: $second;
-                    max-width: 100px;
-                    width: 100%;
-                    text-align: center;
-                    border-radius: 13px;
-                    padding: .7rem;
-                    cursor: pointer;
                     box-shadow: 2px 3px 33px -3px $second;
-                    margin: 2rem .9rem 0 .9rem;
-                    font-weight: 700;
-                }
-                i{
-                    background: rgba(0, 0, 0, 0.24);
-                    border-radius: 14px;
-                    margin: 2rem .9rem 0 .9rem;
+                    max-width: 150px;
+                    padding: 1rem;
+                    margin: 2rem 0;
+                    border-radius: 13px;
                     cursor: pointer;
+                    @include center;
+                }
+                #card-add{
+                    background: rgba(0, 0, 0, 0.418);
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    transform: translateY(2rem);
+                    margin-left: 2rem;
+                    cursor: pointer;
+                    @include center;
                 }
             }
-
-        }
-
-        //right section
-        .right{
-            display: flex;
-            align-items: flex-end;
             
-            img{
-               width: 100px;
-               height: 70px;
-               margin: 0.7rem;
-               border-radius: 7px;
-               cursor: pointer;
-               transition: .4s ease-in all;
-               &:hover{
-                   transform: scale(1.1);
-               }
-            }
-            .active{
-                width: 150px;
-                height: 100px;
-                transform: translateY(.7rem);
-                box-shadow: 1px 1px 16px -2px rgba(255, 255, 255, 0.76);
+        }
+    }
+
+       //right part 
+       &-right{
+        flex: 1;
+        border: 2px solid blue;
+    }
+
+
+
+// ============================================================================
+// Responsive
+// ============================================================================
+@media (min-width:'640px') and (max-width:'768px'){
+  .bottom{
+      h1{font-size: 2rem;}
+  }
+}
+@include responsive(tablet){
+    //style left section
+    .top{
+        justify-content: center;
+        position: relative;
+        .friends{
+            p{
+                position: absolute;
+                top: 3.2rem;
+                left: 0;
+                width: 100%;
+                text-align: center;
             }
         }
     }
+    .bottom{padding: 2rem;}
+
+    //style right section
+    &-right{display: none;}
+}
+
+@include responsive(phone){
+    padding: 0;
+    width: 80%;
+    .bottom{
+        padding: 2rem .8rem;
+        width: 100%;
+        h1{font-size: 1.4rem;}
+    }
+}
 }
