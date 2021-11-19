@@ -3,7 +3,7 @@ const body = document.body;
 
 const menu=(()=>{
     let open = document.querySelector('#open'),
-        close = document.querySelector('#close'),
+        closes = document.querySelectorAll('#close'),
         right = document.querySelector('.right'),
         left = document.querySelector('.left');
 
@@ -11,10 +11,13 @@ const menu=(()=>{
         right.classList.add('active');
         left.classList.add('active');
     }
-    close.onclick=()=>{
-        right.classList.remove('active');
-        left.classList.remove('active');
-    }
+    closes.forEach(element => {
+        element.onclick=()=>{
+            right.classList.remove('active');
+            left.classList.remove('active');
+        }
+    });
+   
 })();
 
 let swiper = new Swiper(".series", {

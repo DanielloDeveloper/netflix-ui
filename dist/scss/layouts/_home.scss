@@ -9,7 +9,7 @@ main{
     // =========================================================================
     // Responsive design of homepage
     // ==========================================================================
-    @include responsive(phone){
+    @include responsive(tablet){
         width: 100% !important;
         .content{
             top: 7vh;

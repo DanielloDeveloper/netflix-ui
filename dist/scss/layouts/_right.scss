@@ -13,6 +13,18 @@
         @include center;
         flex-direction: column;
     }
+
+    //style close
+    #close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 25px;
+        color: $third;
+        padding: $p;
+        display: none;
+        cursor: pointer;
+    }
    
     //style icon
     i{
@@ -30,10 +42,6 @@
             background:$second;
             z-index: -1;
             border-radius: 50%;
-        }
-        &:hover{
-            box-shadow: 2px 3px 3px -3px $second;
-            transform: scale(1.1);
         }
     }
 
@@ -57,11 +65,15 @@
     @media (min-width:'640px') and (max-width:'768px'){
         .right{
             position: fixed;
-            z-index: 1000;
+            z-index: 10000;
             top: 0;
-            right: 30px;
+            right: -100%;
             height: 100%;
             div{@include center; flex-direction: column;}
+            #close{display: block;}
+        }
+        .right.active{
+            right: 30px;
         }
     }
 

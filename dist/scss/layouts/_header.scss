@@ -27,7 +27,7 @@
         }
     }
     
-    @include responsive(phone){display: flex;}
+    @include responsive(tablet){display: flex;}
 }
 
 //style header laptop and mobile witdh homepage

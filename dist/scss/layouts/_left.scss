@@ -10,9 +10,6 @@
 
     //style close button
     #close{
-        position: absolute;
-        right: 30px;
-        top: 20px;
         font-size: 25px;
         color: $third;
         padding: $p;
@@ -164,7 +161,7 @@
         .left{
             position: fixed;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             z-index: 1000;
             background: $black;
@@ -176,13 +173,22 @@
             //style logo and list
             .logo{ top: 1vh; /*fix top position*/}
             .list{top: 2vh; /*fix top position*/}
+            #close{
+                display: block;
+                position: absolute;
+                right: 30px;
+                top: 20px;
+            }
+        }
+        .left.active{
+            left: 0;
         }
     }
 
     @include responsive(phone){
         .left{
             left: -100%;
-            #close{display: block;}
+           
         }
         .left.active{
             left: 0;
