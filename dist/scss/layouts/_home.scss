@@ -1,12 +1,17 @@
 main{
     width: 90%;
     height: 100%;
-    z-index: inherit;
+    .content{
+        top: 0;
+    }
     
     // =========================================================================
     // Responsive design of homepage
     // ==========================================================================
     @include responsive(phone){
         width: 100% !important;
+        .content{
+            top: 7vh;
+        }
     }
 }

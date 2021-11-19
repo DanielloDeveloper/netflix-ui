@@ -1,3 +1,4 @@
+//style header mobile
 .header-mob{
     width: 100%;
     padding: 0 10px;
@@ -27,4 +28,91 @@
     }
     
     @include responsive(phone){display: flex;}
+}
+
+//style header laptop and mobile witdh homepage
+.search-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //style of input div
+    .input-div{
+        @include center;
+        flex: .6;
+        input{
+            border: 1px solid $first;
+            border-radius: 11px;
+            color: white;
+            position: relative;
+            max-width: 500px;
+            &::placeholder{
+                padding: $p;
+            }
+        }
+        .search{right: 2.5rem; padding: $p;}
+        .mic{right: 7.5rem; padding: $p;}
+    }
+
+    //style of user div
+    .user{
+        @include center;
+        justify-content: end;
+        padding-right: 30px;
+        flex: .4;
+
+        //style icon 
+        .icon{
+            span{
+                margin: $m;
+                cursor: pointer;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 10px;
+                    height: 10px;
+                    background: $second;
+                    border-radius: 50%;
+                    transform: translate(-50%,100%);
+                }
+            }
+        }
+        
+        //style img user
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: $m;
+            border: 3px solid $second;
+        }
+
+        // style info
+        .info{
+            h1{
+                padding: 0;
+                margin: 0;
+                font-size: 1.3rem;
+            }
+            p{
+                padding: 0;
+                margin-top: 3px;
+                color: $first;
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    @include responsive(phone){
+        @include center; //set center element
+        .input-div{
+            flex: 1;
+            padding: 0 10px; 
+            input{padding: 1rem;} //set size input
+        }
+        .user{display: none;} // set visibility user
+    }
 }
